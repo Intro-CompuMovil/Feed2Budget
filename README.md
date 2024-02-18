@@ -56,3 +56,4 @@ Still in development....
 
 ## Licence
 Feed2Budget is available under the GNU GENERAL PUBLIC LICENSE. See the LICENSE file for more details.
+
