@@ -36,7 +36,7 @@ class Login : AppCompatActivity() {
             errorMessage.text = "No puedes tener campos vacios"
         }
         else if(username.text.toString() == "miguel" && password.text.toString() == "1234"){
-            val intent = Intent(this, Login::class.java)
+            val intent = Intent(this, PrincipalUser::class.java)
             startActivity(intent)
         }
         else{

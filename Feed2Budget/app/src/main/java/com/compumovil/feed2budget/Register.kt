@@ -40,7 +40,7 @@ class Register : AppCompatActivity() {
             errorMessage.text = "El usuario ya existe"
         }
         else{
-            val intent = Intent(this, Login::class.java)
+            val intent = Intent(this, PrincipalUser::class.java)
             startActivity(intent)
         }
     }

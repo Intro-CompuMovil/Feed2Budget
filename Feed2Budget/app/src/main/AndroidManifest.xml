@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Feed2Budget"
         tools:targetApi="31">
+        <activity
+            android:name=".UserInfo"
+            android:exported="false"
+            android:theme="@style/Theme.Feed2Budget" />
+        <activity
+            android:name=".PrincipalUser"
+            android:exported="false" />
         <activity
             android:name=".Register"
             android:exported="false" />
@@ -32,6 +44,15 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        
+        <provider
+            android:authorities="com.compumovil.feed2budget.FileProvider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/file_paths"/>
+        </provider>
     </application>
 
 </manifest>

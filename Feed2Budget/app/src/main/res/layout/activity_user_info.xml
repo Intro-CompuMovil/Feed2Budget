@@ -5,31 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register"
+    tools:context=".UserInfo"
     android:background="@drawable/gradient">
 
-    <TextView
-        android:id="@+id/errorMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/open_sans_extrabold"
-        android:text=""
-        android:textColor="@color/red"
-        android:textSize="30sp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813" />
-
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/saveChanges"
         android:layout_width="300dp"
         android:layout_height="68dp"
         android:backgroundTint="@color/button_login"
         android:fontFamily="@font/open_sans_extrabold"
-        android:text="@string/registrarse"
+        android:text="@string/guardar_cambios"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,40 +26,42 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="348dp"
-        android:layout_height="72dp"
+        android:layout_width="336dp"
+        android:layout_height="119dp"
         android:fontFamily="@font/open_sans_extrabold"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="10"
         android:shadowDy="10"
         android:shadowRadius="2"
-        android:text="@string/registrarse"
-        android:textColor="@color/white"
-        android:textSize="50sp"
-        android:textStyle="bold"
+        android:text="@string/actualizar_informaci_n"
         android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
+        app:layout_constraintVertical_bias="0.024" />
 
-    <ImageView
-        android:id="@+id/logo"
+    <ImageButton
+        android:id="@+id/userImage"
         android:layout_width="168dp"
         android:layout_height="167dp"
-        android:contentDescription="@string/app_logo"
+        android:contentDescription="@string/foto_del_usuario"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintVertical_bias="0.273"
+        app:srcCompat="@drawable/userimage" />
 
     <EditText
-        android:id="@+id/userText"
+        android:id="@+id/username"
         android:layout_width="330dp"
         android:layout_height="68dp"
         android:drawableStart="@drawable/user"
@@ -90,31 +77,10 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.524" />
 
     <EditText
-        android:id="@+id/emailText"
-        android:layout_width="330dp"
-        android:layout_height="68dp"
-        android:drawableStart="@drawable/email"
-        android:drawablePadding="20dp"
-        android:ems="10"
-        android:fontFamily="@font/open_sans_semibold"
-        android:hint="@string/correo"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.565"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/passwordText"
+        android:id="@+id/password"
         android:layout_width="330dp"
         android:layout_height="68dp"
         android:drawableStart="@drawable/password"
@@ -130,8 +96,26 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.698"
-        tools:ignore="TextFields"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.77"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="330dp"
+        android:layout_height="68dp"
+        android:drawableStart="@drawable/email"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:fontFamily="@font/open_sans_semibold"
+        android:hint="@string/correo"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.638" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
