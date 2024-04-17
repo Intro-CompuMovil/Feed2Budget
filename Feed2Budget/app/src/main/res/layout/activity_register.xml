@@ -14,14 +14,15 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/open_sans_extrabold"
         android:text=""
+        android:textAlignment="center"
         android:textColor="@color/red"
         android:textSize="30sp"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813" />
+        app:layout_constraintVertical_bias="0.861" />
 
     <Button
         android:id="@+id/registerButton"
@@ -37,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944" />
+        app:layout_constraintVertical_bias="0.975" />
 
     <TextView
         android:id="@+id/title"
@@ -49,16 +50,16 @@
         android:shadowDy="10"
         android:shadowRadius="2"
         android:text="@string/registrarse"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="50sp"
         android:textStyle="bold"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
+        app:layout_constraintVertical_bias="0.279" />
 
     <ImageView
         android:id="@+id/logo"
@@ -70,13 +71,14 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028"
+        app:layout_constraintVertical_bias="0.012"
         app:srcCompat="@drawable/logo" />
 
     <EditText
         android:id="@+id/userText"
         android:layout_width="330dp"
         android:layout_height="68dp"
+        android:autofillHints=""
         android:drawableStart="@drawable/user"
         android:drawablePadding="20dp"
         android:ems="10"
@@ -90,13 +92,13 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.413" />
 
     <EditText
         android:id="@+id/emailText"
         android:layout_width="330dp"
         android:layout_height="68dp"
+        android:autofillHints=""
         android:drawableStart="@drawable/email"
         android:drawablePadding="20dp"
         android:ems="10"
@@ -110,13 +112,13 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.565"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.527" />
 
     <EditText
         android:id="@+id/passwordText"
         android:layout_width="330dp"
         android:layout_height="68dp"
+        android:autofillHints=""
         android:drawableStart="@drawable/password"
         android:drawablePadding="20dp"
         android:ems="10"
@@ -130,8 +132,20 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.698"
-        tools:ignore="TextFields"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.645"
+        tools:ignore="TextFields" />
+
+    <CheckBox
+        android:id="@+id/empresa"
+        android:layout_width="330dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="516dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:text="¿Es cuenta empresarial?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Presupuesto"
+    android:background="@drawable/gradient">
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/red"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.779" />
+
+    <Button
+        android:id="@+id/saveChanges"
+        android:layout_width="300dp"
+        android:layout_height="68dp"
+        android:backgroundTint="@color/button_login"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="@string/guardar_cambios"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.944" />
+
+    <Button
+        android:id="@+id/fondo1"
+        android:layout_width="361dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/navbar"
+        android:text=""
+        android:clickable="false"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <Button
+        android:id="@+id/fondo2"
+        android:layout_width="361dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="212dp"
+        android:backgroundTint="@color/navbar"
+        android:clickable="false"
+        android:text=""
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="337dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="2"
+        android:text="@string/cambiar_presupuesto"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/presupuestoActual"
+        android:layout_width="321dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:shadowColor="@color/text_shadow"
+        android:text="@string/default_presupuesto"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/fondo1"
+        app:layout_constraintTop_toTopOf="@+id/fondo1" />
+
+    <EditText
+        android:id="@+id/nuevoPresupuesto"
+        android:layout_width="361dp"
+        android:layout_height="66dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="@string/ingrese_el_nuevo_presupuesto"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        app:layout_constraintBottom_toBottomOf="@+id/fondo2"
+        app:layout_constraintStart_toStartOf="@+id/fondo2"
+        app:layout_constraintTop_toTopOf="@+id/fondo2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

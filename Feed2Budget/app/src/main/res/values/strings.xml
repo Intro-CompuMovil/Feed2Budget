@@ -59,4 +59,11 @@
     <string name="foto_del_usuario">Foto del usuario</string>
     <string name="guardar_cambios">Guardar cambios</string>
     <string name="actualizar_informaci_n">Actualizar información</string>
+    <string name="lunes">Lunes</string>
+    <string name="desayuno">Desayuno</string>
+    <string name="almuerzo">Almuerzo</string>
+    <string name="cena">Cena</string>
+    <string name="default_presupuesto">Su presupuesto actual es de: 100000$</string>
+    <string name="cambiar_presupuesto">Cambiar Presupuesto</string>
+    <string name="ingrese_el_nuevo_presupuesto">Ingrese el nuevo presupuesto</string>
 </resources>

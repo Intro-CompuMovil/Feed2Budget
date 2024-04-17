@@ -3,6 +3,7 @@ package com.compumovil.feed2budget
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +34,8 @@ class Register : AppCompatActivity() {
         val email = findViewById<TextView>(R.id.emailText)
         val errorMessage = findViewById<TextView>(R.id.errorMessage)
 
+        val empresa = findViewById<CheckBox>(R.id.empresa)
+
         if(username.text.toString().isEmpty() || password.text.toString().isEmpty() || email.text.toString().isEmpty()){
             errorMessage.text = "No puedes tener campos vacios"
         }
@@ -40,8 +43,13 @@ class Register : AppCompatActivity() {
             errorMessage.text = "El usuario ya existe"
         }
         else{
-            val intent = Intent(this, PrincipalUser::class.java)
-            startActivity(intent)
+            if (empresa.isChecked){
+                return
+            }
+            else{
+                val intent = Intent(this, PrincipalUser::class.java)
+                startActivity(intent)
+            }
         }
     }
 }

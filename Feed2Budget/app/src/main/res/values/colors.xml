@@ -7,4 +7,7 @@
     <color name="text_shadow_white">#FFFFFF</color>
     <color name="button_login">#BADBC6</color>
     <color name="navbar">#DEDFDD</color>
+    <color name="green">#264B4E</color>
+    <color name="grey">#5C5C5C</color>
+    <color name="lavender">#8692f7</color>
 </resources>
