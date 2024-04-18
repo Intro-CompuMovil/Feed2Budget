@@ -3,6 +3,7 @@ package com.compumovil.feed2budget
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,10 +21,16 @@ class PrincipalCompany : AppCompatActivity() {
         }
 
         val semanal = findViewById<Button>(R.id.semanal)
+        val info = findViewById<ImageButton>(R.id.usuario)
 
         semanal.setOnClickListener {
             val intent = Intent(this, platosRestaurantes::class.java)
             intent.putExtra("id", 0)
+            startActivity(intent)
+        }
+
+        info.setOnClickListener{
+            val intent = Intent(this, UserInfo::class.java)
             startActivity(intent)
         }
 
