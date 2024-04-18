@@ -39,6 +39,10 @@ class Login : AppCompatActivity() {
             val intent = Intent(this, PrincipalUser::class.java)
             startActivity(intent)
         }
+        else if(username.text.toString() == "parrillada" && password.text.toString() == "1234"){
+            val intent = Intent(this, PrincipalCompany::class.java)
+            startActivity(intent)
+        }
         else{
             errorMessage.text = "Usuario y/o contraseña incorrectos"
         }

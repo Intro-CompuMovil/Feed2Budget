@@ -42,9 +42,13 @@ class Register : AppCompatActivity() {
         else if(username.text.toString() == "miguel"){
             errorMessage.text = "El usuario ya existe"
         }
+        else if(username.text.toString() == "parrillada"){
+            errorMessage.text = "El usuario ya existe"
+        }
         else{
             if (empresa.isChecked){
-                return
+                val intent = Intent(this, PrincipalCompany::class.java)
+                startActivity(intent)
             }
             else{
                 val intent = Intent(this, PrincipalUser::class.java)

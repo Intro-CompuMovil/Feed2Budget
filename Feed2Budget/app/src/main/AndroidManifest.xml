@@ -28,6 +28,9 @@
         android:theme="@style/Theme.Feed2Budget"
         tools:targetApi="31">
         <activity
+            android:name=".PrincipalCompany"
+            android:exported="false" />
+        <activity
             android:name=".platosRestaurantes"
             android:exported="false"
             android:theme="@style/Theme.Feed2Budget" />
