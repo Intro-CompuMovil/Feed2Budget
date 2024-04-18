@@ -28,6 +28,13 @@
         android:theme="@style/Theme.Feed2Budget"
         tools:targetApi="31">
         <activity
+            android:name=".semanalDescripcion"
+            android:exported="false" />
+        <activity
+            android:name=".descripcionSemanal"
+            android:exported="false"
+            android:theme="@style/Theme.Feed2Budget" />
+        <activity
             android:name=".Restaurantes"
             android:exported="false" />
         <activity

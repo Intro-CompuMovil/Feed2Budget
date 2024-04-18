@@ -42,6 +42,7 @@
             android:backgroundTint="@color/navbar"
             android:text=""
             app:cornerRadius="10dp"
+            android:clickable="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -133,6 +134,7 @@
             android:backgroundTint="@color/navbar"
             android:text=""
             app:cornerRadius="10dp"
+            android:clickable="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -222,6 +224,7 @@
             android:layout_height="104dp"
             android:layout_marginTop="224dp"
             android:backgroundTint="@color/navbar"
+            android:clickable="false"
             android:text=""
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -315,6 +318,7 @@
             android:backgroundTint="@color/navbar"
             android:text=""
             app:cornerRadius="10dp"
+            android:clickable="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -396,6 +400,282 @@
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/semanal4"
             app:layout_constraintTop_toTopOf="@+id/semanal4"
+            app:srcCompat="@drawable/cena" />
+
+        <Button
+            android:id="@+id/semanal5"
+            android:layout_width="361dp"
+            android:layout_height="104dp"
+            android:layout_marginTop="440dp"
+            android:backgroundTint="@color/navbar"
+            android:text=""
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:clickable="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:textSize="11sp"
+            android:text="Viernes"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/semanal5"
+            app:layout_constraintTop_toTopOf="@+id/semanal5" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="75dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:text="@string/desayuno"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/semanal5"
+            app:layout_constraintTop_toTopOf="@+id/semanal5" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="75dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:text="@string/almuerzo"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/semanal5"
+            app:layout_constraintTop_toTopOf="@+id/semanal5" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="75dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="268dp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:text="@string/cena"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/semanal5"
+            app:layout_constraintTop_toTopOf="@+id/semanal5" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="81dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/semanal5"
+            app:layout_constraintTop_toTopOf="@+id/semanal5"
+            app:srcCompat="@drawable/desayuno" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="81dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="164dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/semanal5"
+            app:layout_constraintTop_toTopOf="@+id/semanal5"
+            app:srcCompat="@drawable/almuerzo" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="81dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="264dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/semanal5"
+            app:layout_constraintTop_toTopOf="@+id/semanal5"
+            app:srcCompat="@drawable/cena" />
+
+        <Button
+            android:id="@+id/semanal6"
+            android:layout_width="361dp"
+            android:layout_height="104dp"
+            android:layout_marginTop="556dp"
+            android:backgroundTint="@color/navbar"
+            android:text=""
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:clickable="false"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:textSize="11sp"
+            android:text="Sabado"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/semanal6"
+            app:layout_constraintTop_toTopOf="@+id/semanal6" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="75dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:text="@string/desayuno"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/semanal6"
+            app:layout_constraintTop_toTopOf="@+id/semanal6" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="75dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:text="@string/almuerzo"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/semanal6"
+            app:layout_constraintTop_toTopOf="@+id/semanal6" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="75dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="268dp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:text="@string/cena"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/semanal6"
+            app:layout_constraintTop_toTopOf="@+id/semanal6" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="81dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/semanal6"
+            app:layout_constraintTop_toTopOf="@+id/semanal6"
+            app:srcCompat="@drawable/desayuno" />
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="81dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="164dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/semanal6"
+            app:layout_constraintTop_toTopOf="@+id/semanal6"
+            app:srcCompat="@drawable/almuerzo" />
+
+        <ImageView
+            android:id="@+id/imageView19"
+            android:layout_width="81dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="264dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/semanal6"
+            app:layout_constraintTop_toTopOf="@+id/semanal6"
+            app:srcCompat="@drawable/cena" />
+
+        <Button
+            android:id="@+id/semanal7"
+            android:layout_width="361dp"
+            android:layout_height="104dp"
+            android:layout_marginTop="660dp"
+            android:backgroundTint="@color/navbar"
+            android:text=""
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:clickable="false"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:textSize="11sp"
+            android:text="Domingo"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/semanal7"
+            app:layout_constraintTop_toTopOf="@+id/semanal7" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="75dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:text="@string/desayuno"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/semanal7"
+            app:layout_constraintTop_toTopOf="@+id/semanal7" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="75dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:text="@string/almuerzo"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/semanal7"
+            app:layout_constraintTop_toTopOf="@+id/semanal7" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="75dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="268dp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:text="@string/cena"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/semanal7"
+            app:layout_constraintTop_toTopOf="@+id/semanal7" />
+
+        <ImageView
+            android:id="@+id/imageView20"
+            android:layout_width="81dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/semanal7"
+            app:layout_constraintTop_toTopOf="@+id/semanal7"
+            app:srcCompat="@drawable/desayuno" />
+
+        <ImageView
+            android:id="@+id/imageView21"
+            android:layout_width="81dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="164dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/semanal7"
+            app:layout_constraintTop_toTopOf="@+id/semanal7"
+            app:srcCompat="@drawable/almuerzo" />
+
+        <ImageView
+            android:id="@+id/imageView22"
+            android:layout_width="81dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="264dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/semanal7"
+            app:layout_constraintTop_toTopOf="@+id/semanal7"
             app:srcCompat="@drawable/cena" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

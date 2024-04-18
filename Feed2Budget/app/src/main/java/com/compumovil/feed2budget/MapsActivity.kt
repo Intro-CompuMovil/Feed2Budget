@@ -96,6 +96,13 @@ class MapsActivity : AppCompatActivity(), SensorEventListener {
         centerOnUserLocation()
         locationOverlay.enableFollowLocation()
 
+        val parrillada = GeoPoint(4.628596, -74.066345)
+        val giornatta = GeoPoint(4.697936, -74.054965)
+        val chula = GeoPoint(4.699182, -74.050430)
+        addMarkerWithAddress(parrillada)
+        addMarkerWithAddress(giornatta)
+        addMarkerWithAddress(chula)
+
         //buscar y longclick
         buscar()
         longClick()

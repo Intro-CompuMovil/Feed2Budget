@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".semanalDescripcion"
+    android:background="@drawable/gradient">
+
+
+
+    <Button
+        android:id="@+id/desayuno"
+        android:layout_width="364dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/navbar"
+        android:text=""
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="115dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="@+id/desayuno"
+        app:layout_constraintTop_toTopOf="@+id/desayuno"
+        app:srcCompat="@drawable/desayuno" />
+
+    <Button
+        android:id="@+id/almuerzo"
+        android:layout_width="364dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="224dp"
+        android:backgroundTint="@color/navbar"
+        android:text=""
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <Button
+        android:id="@+id/cena"
+        android:layout_width="364dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="432dp"
+        android:backgroundTint="@color/navbar"
+        android:text=""
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="334dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="2"
+        android:text="Lunes"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Desayuno"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/desayuno"
+        app:layout_constraintTop_toTopOf="@+id/desayuno" />
+
+    <TextView
+        android:id="@+id/descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Descripción"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/desayuno"
+        app:layout_constraintTop_toTopOf="@+id/desayuno" />
+
+    <TextView
+        android:id="@+id/precio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="136dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="precio: 8000 COP"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/desayuno"
+        app:layout_constraintTop_toTopOf="@+id/desayuno" />
+
+    <TextView
+        android:id="@+id/descripcion2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="- Bowl de avena \n- Kiwi \n- Jugo de naranja "
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/desayuno"
+        app:layout_constraintTop_toTopOf="@+id/desayuno" />
+    <TextView
+        android:id="@+id/cena2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Cena"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/cena"
+        app:layout_constraintTop_toTopOf="@+id/cena" />
+    <ImageView
+        android:id="@+id/imageViewCena"
+        android:layout_width="115dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="@+id/cena"
+        app:layout_constraintTop_toTopOf="@+id/cena"
+        app:srcCompat="@drawable/cena" />
+    <TextView
+        android:id="@+id/descripcion5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Descripción"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/cena"
+        app:layout_constraintTop_toTopOf="@+id/cena" />
+    <TextView
+        android:id="@+id/descripcion6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="- Burritos de cerdo \n - Coca cola "
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/cena"
+        app:layout_constraintTop_toTopOf="@+id/cena" />
+    <TextView
+        android:id="@+id/precio3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="136dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="precio: 12000 COP"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/cena"
+        app:layout_constraintTop_toTopOf="@+id/cena" />
+
+    <TextView
+        android:id="@+id/almuerzo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Almuerzo"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/almuerzo"
+        app:layout_constraintTop_toTopOf="@+id/almuerzo" />
+    <ImageView
+        android:id="@+id/imageViewAlmuerzo"
+        android:layout_width="115dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="@+id/almuerzo"
+        app:layout_constraintTop_toTopOf="@+id/almuerzo"
+        app:srcCompat="@drawable/almuerzo" />
+    <TextView
+        android:id="@+id/descripcion3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Descripción"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/almuerzo"
+        app:layout_constraintTop_toTopOf="@+id/almuerzo" />
+    <TextView
+        android:id="@+id/descripcion4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="- Arroz Blanco \n- Papas fritas \n- Encebollado \n- Jugo de Lulo "
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/almuerzo"
+        app:layout_constraintTop_toTopOf="@+id/almuerzo" />
+    <TextView
+        android:id="@+id/precio2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="136dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="precio: 15000 COP"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/almuerzo"
+        app:layout_constraintTop_toTopOf="@+id/almuerzo" />
+
+    <TextView
+        android:id="@+id/restaurante1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="112dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Restaurante: Giornatta"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/desayuno"
+        app:layout_constraintTop_toTopOf="@+id/desayuno" />
+
+    <TextView
+        android:id="@+id/restaurante2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="112dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Restaurante: Parrillada"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/almuerzo"
+        app:layout_constraintTop_toTopOf="@+id/almuerzo" />
+    <TextView
+        android:id="@+id/restaurante3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="112dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Restaurante: La Chula"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/cena"
+        app:layout_constraintTop_toTopOf="@+id/cena" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

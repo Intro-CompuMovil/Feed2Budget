@@ -40,7 +40,7 @@ class Login : AppCompatActivity() {
             startActivity(intent)
         }
         else{
-            errorMessage.text = password.text
+            errorMessage.text = "Usuario y/o contraseña incorrectos"
         }
     }
 }
