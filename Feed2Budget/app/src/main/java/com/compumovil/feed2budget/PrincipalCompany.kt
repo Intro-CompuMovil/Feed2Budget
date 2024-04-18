@@ -2,6 +2,7 @@ package com.compumovil.feed2budget
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,8 +18,14 @@ class PrincipalCompany : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val intent = Intent(this, platosRestaurantes::class.java)
-        intent.putExtra("id", 0)
-        startActivity(intent)
+
+        val semanal = findViewById<Button>(R.id.semanal)
+
+        semanal.setOnClickListener {
+            val intent = Intent(this, platosRestaurantes::class.java)
+            intent.putExtra("id", 0)
+            startActivity(intent)
+        }
+
     }
 }
