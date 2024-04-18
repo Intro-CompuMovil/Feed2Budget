@@ -69,11 +69,11 @@
         android:id="@+id/semanal"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="408dp"
+        android:layout_marginTop="224dp"
         android:backgroundTint="@color/navbar"
         android:text=""
         app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -103,5 +103,46 @@
         app:layout_constraintStart_toStartOf="@+id/semanal"
         app:layout_constraintTop_toTopOf="@+id/semanal"
         app:layout_constraintVertical_bias="0.768" />
+
+    <Button
+        android:id="@+id/anadir"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="424dp"
+        android:backgroundTint="@color/navbar"
+        android:text=""
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/anadirIcon"
+        android:layout_width="83dp"
+        android:layout_height="81dp"
+        android:contentDescription="@string/calendario"
+        android:src="@drawable/anadir"
+        app:layout_constraintBottom_toBottomOf="@+id/anadir"
+        app:layout_constraintEnd_toEndOf="@+id/anadir"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="@+id/anadir"
+        app:layout_constraintTop_toTopOf="@+id/anadir"
+        app:layout_constraintVertical_bias="0.115" />
+
+    <TextView
+        android:id="@+id/anadirText"
+        android:layout_width="139dp"
+        android:layout_height="54dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Añadir producto"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/anadir"
+        app:layout_constraintEnd_toEndOf="@+id/anadir"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/anadir"
+        app:layout_constraintTop_toTopOf="@+id/anadir"
+        app:layout_constraintVertical_bias="0.927" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

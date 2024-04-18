@@ -22,6 +22,7 @@ class PrincipalCompany : AppCompatActivity() {
 
         val semanal = findViewById<Button>(R.id.semanal)
         val info = findViewById<ImageButton>(R.id.usuario)
+        val anadir = findViewById<Button>(R.id.anadir)
 
         semanal.setOnClickListener {
             val intent = Intent(this, platosRestaurantes::class.java)
@@ -31,6 +32,11 @@ class PrincipalCompany : AppCompatActivity() {
 
         info.setOnClickListener{
             val intent = Intent(this, CompanyInfo::class.java)
+            startActivity(intent)
+        }
+
+        anadir.setOnClickListener {
+            val intent = Intent(this, anadirProducto::class.java)
             startActivity(intent)
         }
 
