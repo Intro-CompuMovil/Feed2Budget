@@ -1,4 +1,4 @@
-package com.compumovil.feed2budget
+package com.compumovil.feed2budget.Cliente
 
 import android.os.Bundle
 import android.widget.Button
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.compumovil.feed2budget.PresupuestoGlobal
+import com.compumovil.feed2budget.R
+
 class Presupuesto : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

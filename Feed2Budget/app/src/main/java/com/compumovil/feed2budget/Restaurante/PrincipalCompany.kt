@@ -1,4 +1,4 @@
-package com.compumovil.feed2budget
+package com.compumovil.feed2budget.Restaurante
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.compumovil.feed2budget.R
+import com.compumovil.feed2budget.anadirProducto
+import com.compumovil.feed2budget.platosRestaurantes
 
 class PrincipalCompany : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

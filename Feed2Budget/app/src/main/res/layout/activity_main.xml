@@ -8,8 +8,9 @@
     tools:context=".MainActivity"
     android:background="@drawable/gradient">
 
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title"
         android:layout_width="348dp"
         android:layout_height="72dp"
         android:fontFamily="@font/open_sans_extrabold"
@@ -17,7 +18,7 @@
         android:shadowDx="10"
         android:shadowDy="10"
         android:shadowRadius="2"
-        android:text="@string/feed2budget"
+        android:text="Feed2Budget"
         android:textColor="@color/white"
         android:textSize="50sp"
         android:textStyle="bold"
@@ -27,10 +28,10 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintVertical_bias="0.311" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logo"
         android:layout_width="168dp"
         android:layout_height="167dp"
         android:contentDescription="@string/app_logo"
@@ -39,8 +40,49 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308"
+        app:layout_constraintVertical_bias="0.028"
         app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/userText"
+        android:layout_width="330dp"
+        android:layout_height="68dp"
+        android:drawableStart="@drawable/user"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:fontFamily="@font/open_sans_semibold"
+        android:hint="@string/usuario"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/passwordText"
+        android:layout_width="330dp"
+        android:layout_height="68dp"
+        android:drawableStart="@drawable/password"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:fontFamily="@font/open_sans_semibold"
+        android:hint="@string/contrase_a"
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.639"
+        android:autofillHints="" />
+
 
     <Button
         android:id="@+id/loginButton"
@@ -56,7 +98,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.634" />
+        app:layout_constraintVertical_bias="0.76" />
 
     <Button
         android:id="@+id/registerButton"
@@ -72,5 +114,20 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793" />
+        app:layout_constraintVertical_bias="0.906" />
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/red"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 </androidx.constraintlayout.widget.ConstraintLayout>

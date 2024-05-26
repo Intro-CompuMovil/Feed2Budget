@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "115806719380",
+    "project_id": "feed2budget",
+    "storage_bucket": "feed2budget.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115806719380:android:5a71d6f37a75393fa11381",
+        "android_client_info": {
+          "package_name": "com.compumovil.feed2budget"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBfDb_AkrmU2Hr72OwH9yMv_SFLjMZJMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

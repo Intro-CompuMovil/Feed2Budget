@@ -1,4 +1,4 @@
-package com.compumovil.feed2budget
+package com.compumovil.feed2budget.Cliente
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -23,8 +23,8 @@ import android.os.Environment
 import android.os.Handler
 import android.os.StrictMode
 import android.util.Log
-import android.view.View
 import android.view.inputmethod.EditorInfo
+import com.compumovil.feed2budget.R
 import com.compumovil.feed2budget.databinding.ActivityMapsBinding
 import org.json.JSONArray
 import org.json.JSONObject
@@ -41,8 +41,6 @@ import java.util.Locale
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.views.overlay.Marker
 import java.io.IOException
-import org.osmdroid.tileprovider.tilesource.OnlineTileSourceBase
-import org.osmdroid.util.MapTileIndex
 import org.osmdroid.views.overlay.MapEventsOverlay
 import org.osmdroid.views.overlay.Polyline
 import org.osmdroid.views.overlay.TilesOverlay

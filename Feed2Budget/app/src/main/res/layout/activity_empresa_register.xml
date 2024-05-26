@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".Restaurante.EmpresaRegister">
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="300dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="@color/button_login"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Registrase"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnTakePhoto"
+        android:layout_width="300dp"
+        android:layout_height="68dp"
+        android:backgroundTint="@color/button_login"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Tomar Foto"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userImage" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="336dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="2"
+        android:text="Registrate como Empresa"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="333dp"
+        android:layout_height="278dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTakePhoto">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="330dp"
+            android:layout_height="68dp"
+            android:drawableStart="@drawable/user"
+            android:drawablePadding="20dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans_semibold"
+            android:hint="@string/usuario"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="330dp"
+            android:layout_height="68dp"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="20dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans_semibold"
+            android:hint="@string/contrase_a"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:ignore="TextFields" />
+
+        <EditText
+            android:id="@+id/direccion"
+            android:layout_width="330dp"
+            android:layout_height="68dp"
+            android:drawableStart="@drawable/location"
+            android:drawablePadding="20dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans_semibold"
+            android:hint="Direccion"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:ignore="TextFields" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="330dp"
+            android:layout_height="68dp"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="20dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans_semibold"
+            android:hint="@string/correo"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/userImage"
+        android:layout_width="168dp"
+        android:layout_height="167dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/foto_del_usuario"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:srcCompat="@drawable/userimage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

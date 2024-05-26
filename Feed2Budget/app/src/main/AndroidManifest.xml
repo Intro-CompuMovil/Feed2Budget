@@ -28,13 +28,19 @@
         android:theme="@style/Theme.Feed2Budget"
         tools:targetApi="31">
         <activity
+            android:name=".Restaurante.EmpresaRegister"
+            android:exported="false" />
+        <activity
+            android:name=".Cliente.UserRegister"
+            android:exported="false" />
+        <activity
             android:name=".anadirProducto"
             android:exported="false" />
         <activity
-            android:name=".CompanyInfo"
+            android:name=".Restaurante.CompanyInfo"
             android:exported="false" />
         <activity
-            android:name=".PrincipalCompany"
+            android:name=".Restaurante.PrincipalCompany"
             android:exported="false" />
         <activity
             android:name=".platosRestaurantes"
@@ -44,27 +50,23 @@
             android:name=".semanalDescripcion"
             android:exported="false" />
         <activity
-            android:name=".descripcionSemanal"
-            android:exported="false"
-            android:theme="@style/Theme.Feed2Budget" />
-        <activity
             android:name=".Restaurantes"
             android:exported="false" />
         <activity
-            android:name=".Presupuesto"
+            android:name=".Cliente.Presupuesto"
             android:exported="false" />
         <activity
-            android:name=".MapsActivity"
+            android:name=".Cliente.MapsActivity"
             android:exported="false" />
         <activity
-            android:name=".Semanal"
+            android:name=".Cliente.Semanal"
             android:exported="false" />
         <activity
             android:name=".UserInfo"
             android:exported="false"
             android:theme="@style/Theme.Feed2Budget" />
         <activity
-            android:name=".PrincipalUser"
+            android:name=".Cliente.PrincipalUser"
             android:exported="false" />
         <activity
             android:name=".Register"

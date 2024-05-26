@@ -8,6 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.compumovil.feed2budget.Cliente.PrincipalUser
+import com.compumovil.feed2budget.Restaurante.PrincipalCompany
 
 class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
