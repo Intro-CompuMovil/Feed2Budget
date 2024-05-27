@@ -178,12 +178,10 @@ class EmpresaRegister : AppCompatActivity() {
                     if (userId != null) {
                         saveUserDataToDatabase(userId, firstName, direccion)
                         Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
-
-
-
                         uploadProfileImageToStorage(userId)
+                        startActivity(Intent(this, PrincipalCompany::class.java))
                     }
-                    startActivity(Intent(this, PrincipalCompany::class.java))
+
                     // finish()
                 } else {
                     Toast.makeText(this, "Registro fallido", Toast.LENGTH_SHORT).show()

@@ -70,6 +70,7 @@ class UserRegister : AppCompatActivity() {
         etPassword = findViewById(R.id.passwordText)
         etFirstName = findViewById(R.id.userText)
         ivProfileImage = findViewById(R.id.userImage)
+        etPresupuesto = findViewById(R.id.etPresupuesto)
 
         val btnRegister = findViewById<Button>(R.id.registerButton)
         val btnTakePhoto = findViewById<Button>(R.id.btnTakePhoto)
@@ -84,7 +85,7 @@ class UserRegister : AppCompatActivity() {
                     etEmail.text.toString(),
                     etPassword.text.toString(),
                     etFirstName.text.toString(),
-                    etPresupuesto.text.toString()
+                    etPresupuesto.text.toString().toDouble()
 
 
                 )
@@ -101,8 +102,7 @@ class UserRegister : AppCompatActivity() {
     private fun askCameraPermission() {
         when {
             ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.CAMERA
+                this, Manifest.permission.CAMERA
             ) == PackageManager.PERMISSION_GRANTED -> {
                 openCamera()
                 //Toast.makeText(this, "Gracias", Toast.LENGTH_SHORT).show()
@@ -112,9 +112,7 @@ class UserRegister : AppCompatActivity() {
                 this, Manifest.permission.CAMERA
             ) -> {
                 Toast.makeText(
-                    this,
-                    "Se necesita permiso para acceder a la cámara",
-                    Toast.LENGTH_LONG
+                    this, "Se necesita permiso para acceder a la cámara", Toast.LENGTH_LONG
                 ).show()
                 requestCameraPermission()
             }
@@ -127,9 +125,7 @@ class UserRegister : AppCompatActivity() {
 
     private fun requestCameraPermission() {
         ActivityCompat.requestPermissions(
-            this,
-            arrayOf(Manifest.permission.CAMERA),
-            MY_PERMISSION_REQUEST_CAMERA
+            this, arrayOf(Manifest.permission.CAMERA), MY_PERMISSION_REQUEST_CAMERA
         )
     }
 
@@ -170,24 +166,19 @@ class UserRegister : AppCompatActivity() {
     }
 
     private fun registerUser(
-        email: String,
-        password: String,
-        firstName: String,
-        presupuesto: String
+        email: String, password: String, firstName: String, presupuesto: Double
     ) {
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val userId = auth.currentUser?.uid
                     if (userId != null) {
                         saveUserDataToDatabase(userId, firstName, presupuesto)
                         Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
-
-
-
                         uploadProfileImageToStorage(userId)
+                        startActivity(Intent(this, PrincipalUser::class.java))
+
                     }
-                    startActivity(Intent(this, PrincipalCompany::class.java))
+
                     // finish()
                 } else {
                     Toast.makeText(this, "Registro fallido", Toast.LENGTH_SHORT).show()
@@ -196,10 +187,12 @@ class UserRegister : AppCompatActivity() {
     }
 
 
-    private fun saveUserDataToDatabase(userId: String, firstName: String, presupuesto: String) {
+    private fun saveUserDataToDatabase(userId: String, firstName: String, presupuesto: Double) {
         val user1 = com.compumovil.feed2budget.User.User()
         user1.firstName = firstName
-        user1.presupuestoSemanal = presupuesto.toDouble()
+        user1.presupuestoSemanal = presupuesto
+        user1.Empresa = false
+        user1.direccion = ""
         myRef = database.getReference(PATH_USERS + userId)
 
         myRef.setValue(user1)
@@ -215,12 +208,10 @@ class UserRegister : AppCompatActivity() {
         imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, baos)
         val data = baos.toByteArray()
 
-        storageReference.putBytes(data)
-            .addOnSuccessListener {
+        storageReference.putBytes(data).addOnSuccessListener {
                 // Subida exitosa
                 Toast.makeText(this, "Imagen subida exitosamente", Toast.LENGTH_LONG).show()
-            }
-            .addOnFailureListener {
+            }.addOnFailureListener {
                 Toast.makeText(this, "Error al subir la imagen", Toast.LENGTH_LONG).show()
                 // Manejar el error en caso de falla
             }

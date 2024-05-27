@@ -1,4 +1,4 @@
-package com.compumovil.feed2budget
+package com.compumovil.feed2budget.User
 
 class PresupuestoGlobal {
     companion object{

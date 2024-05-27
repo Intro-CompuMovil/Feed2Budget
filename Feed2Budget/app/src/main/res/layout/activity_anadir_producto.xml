@@ -14,7 +14,7 @@
         android:layout_height="68dp"
         android:backgroundTint="@color/button_login"
         android:fontFamily="@font/open_sans_extrabold"
-        android:text="guardar"
+        android:text="Guardar"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -61,7 +61,7 @@
         app:srcCompat="@drawable/userimage" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/nombrePlato"
         android:layout_width="330dp"
         android:layout_height="68dp"
         android:drawablePadding="20dp"
@@ -98,14 +98,14 @@
         tools:ignore="TextFields" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/precio"
         android:layout_width="330dp"
         android:layout_height="68dp"
         android:drawablePadding="20dp"
         android:ems="10"
         android:fontFamily="@font/open_sans_semibold"
         android:hint="Precio"
-        android:inputType="text"
+        android:inputType="numberDecimal"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -117,7 +117,7 @@
         tools:ignore="TextFields" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/descripcion"
         android:layout_width="330dp"
         android:layout_height="68dp"
         android:drawablePadding="20dp"

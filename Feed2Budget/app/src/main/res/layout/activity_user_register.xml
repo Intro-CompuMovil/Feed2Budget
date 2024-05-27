@@ -114,17 +114,19 @@
             android:textSize="20sp"
             tools:ignore="TextFields" />
 
+
+
         <EditText
             android:id="@+id/etPresupuesto"
             android:layout_width="330dp"
             android:layout_height="68dp"
             android:autofillHints=""
-
+            android:inputType="numberDecimal"
             android:drawablePadding="20dp"
             android:ems="10"
             android:fontFamily="@font/open_sans_semibold"
             android:hint="Presupuesto Semanal"
-            android:inputType="text"
+            android:numeric="integer|decimal"
             android:textColor="@color/white"
             android:textSize="20sp" />
 

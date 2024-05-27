@@ -130,14 +130,13 @@
             android:id="@+id/semanal2"
             android:layout_width="361dp"
             android:layout_height="104dp"
-            android:layout_marginTop="120dp"
             android:backgroundTint="@color/navbar"
+            android:clickable="false"
             android:text=""
             app:cornerRadius="10dp"
-            android:clickable="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/semanal" />
 
         <TextView
             android:id="@+id/textView8"
@@ -222,14 +221,13 @@
             android:id="@+id/semanal3"
             android:layout_width="361dp"
             android:layout_height="104dp"
-            android:layout_marginTop="224dp"
             android:backgroundTint="@color/navbar"
             android:clickable="false"
             android:text=""
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/semanal2" />
 
         <TextView
             android:id="@+id/textView12"
@@ -314,14 +312,13 @@
             android:id="@+id/semanal4"
             android:layout_width="361dp"
             android:layout_height="104dp"
-            android:layout_marginTop="328dp"
             android:backgroundTint="@color/navbar"
+            android:clickable="false"
             android:text=""
             app:cornerRadius="10dp"
-            android:clickable="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/semanal3" />
 
         <TextView
             android:id="@+id/textView16"
@@ -406,14 +403,13 @@
             android:id="@+id/semanal5"
             android:layout_width="361dp"
             android:layout_height="104dp"
-            android:layout_marginTop="440dp"
             android:backgroundTint="@color/navbar"
+            android:clickable="false"
             android:text=""
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:clickable="false"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/semanal4" />
 
         <TextView
             android:id="@+id/textView20"
@@ -498,14 +494,13 @@
             android:id="@+id/semanal6"
             android:layout_width="361dp"
             android:layout_height="104dp"
-            android:layout_marginTop="556dp"
             android:backgroundTint="@color/navbar"
+            android:clickable="false"
             android:text=""
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:clickable="false"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/semanal5" />
 
         <TextView
             android:id="@+id/textView24"
@@ -590,14 +585,13 @@
             android:id="@+id/semanal7"
             android:layout_width="361dp"
             android:layout_height="104dp"
-            android:layout_marginTop="660dp"
             android:backgroundTint="@color/navbar"
+            android:clickable="false"
             android:text=""
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:clickable="false"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/semanal6" />
 
         <TextView
             android:id="@+id/textView28"

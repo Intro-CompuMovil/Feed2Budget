@@ -8,10 +8,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.compumovil.feed2budget.Cliente.PrincipalUser
+import com.compumovil.feed2budget.Restaurante.PrincipalCompany
 import com.compumovil.feed2budget.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
@@ -48,10 +50,25 @@ class MainActivity : AppCompatActivity() {
                         binding.passwordText.setText("")
                     } else {
                         val user = auth.currentUser
-
                         updateUI(user)
-                        val intent = Intent(this, PrincipalUser::class.java)
-                        startActivity(intent)
+
+                        // Get a reference to the database
+                        val databaseReference =
+                            FirebaseDatabase.getInstance().getReference("users").child(user!!.uid)
+
+                        // Get the value of 'Empresa'
+                        databaseReference.get().addOnSuccessListener {
+                            val isEmpresa =
+                                it.child("empresa").getValue(Boolean::class.java) ?: false
+
+                            // Redirect to the appropriate activity
+                            val intent = if (isEmpresa) {
+                                Intent(this, PrincipalCompany::class.java)
+                            } else {
+                                Intent(this, PrincipalUser::class.java)
+                            }
+                            startActivity(intent)
+                        }
                     }
                 }
         }
@@ -61,28 +78,37 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
-
-
-
-
-
     }
-    private fun checkValues(){
+
+    private fun checkValues() {
         val username = findViewById<TextView>(R.id.userText)
         val password = findViewById<TextView>(R.id.passwordText)
         val errorMessage = findViewById<TextView>(R.id.errorMessage)
 
-        if(username.text.toString().isEmpty() || password.text.toString().isEmpty()){
+        if (username.text.toString().isEmpty() || password.text.toString().isEmpty()) {
             errorMessage.text = "No puedes tener campos vacios"
         }
 
     }
+
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null) {
-            val intent = Intent(this, PrincipalUser::class.java)
-            intent.putExtra("user", currentUser.email)
-            startActivity(intent)
+            // Get a reference to the database
+            val databaseReference =
+                FirebaseDatabase.getInstance().getReference("users").child(currentUser.uid)
+
+            // Get the value of 'Empresa'
+            databaseReference.get().addOnSuccessListener {
+                val isEmpresa = it.child("empresa").getValue(Boolean::class.java) ?: false
+
+                // Redirect to the appropriate activity
+                val intent = if (isEmpresa) {
+                    Intent(this, PrincipalCompany::class.java)
+                } else {
+                    Intent(this, PrincipalUser::class.java)
+                }
+                startActivity(intent)
+            }
         } else {
             binding.userText.setText("")
             binding.passwordText.setText("")
