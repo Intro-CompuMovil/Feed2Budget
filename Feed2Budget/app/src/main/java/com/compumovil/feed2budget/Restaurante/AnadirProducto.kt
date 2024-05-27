@@ -1,4 +1,4 @@
-package com.compumovil.feed2budget
+package com.compumovil.feed2budget.Restaurante
 
 import android.Manifest
 import android.app.Activity
@@ -11,19 +11,13 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.compumovil.feed2budget.Restaurante.PrincipalCompany
+import com.compumovil.feed2budget.R
 import com.compumovil.feed2budget.User.Plato
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -72,14 +66,16 @@ class anadirProducto : AppCompatActivity() {
         database = FirebaseDatabase.getInstance()
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
-       etNombrePlato = findViewById(R.id.nombrePlato)
+        etNombrePlato = findViewById(R.id.nombrePlato)
         etDescripcion = findViewById(R.id.descripcion)
         etPrecio = findViewById(R.id.precio)
         ethora = findViewById(R.id.hora)
         ivProfileImage = findViewById(R.id.userImage)
 
 
-
+        ivProfileImage.setOnClickListener {
+            askCameraPermission()
+        }
 
 
         val save = findViewById<Button>(R.id.saveChanges)
@@ -91,7 +87,7 @@ class anadirProducto : AppCompatActivity() {
 
 
 
-            if (nombrePlato.isNotEmpty() && descripcion.isNotEmpty() && precio.isNotEmpty() && hora.isNotEmpty() ) {
+            if (nombrePlato.isNotEmpty() && descripcion.isNotEmpty() && precio.isNotEmpty() && hora.isNotEmpty()) {
                 registerPlato(
                     etNombrePlato.text.toString(),
                     etDescripcion.text.toString(),
@@ -105,6 +101,7 @@ class anadirProducto : AppCompatActivity() {
         }
 
     }
+
     private fun registerPlato(nombre: String, descripcion: String, precio: String, hora: String) {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         val databaseReference = FirebaseDatabase.getInstance().getReference("users").child(userId!!)
@@ -114,10 +111,15 @@ class anadirProducto : AppCompatActivity() {
         plato.nombre = nombre
         plato.descripcion = descripcion
         plato.precio = precio.toDouble()
+        plato.hora = hora
 
         // Agregar el plato a la lista de platos del usuario
-        databaseReference.child("platos").push().setValue(plato).addOnCompleteListener { task ->
+        val newPlatoReference = databaseReference.child("platos").push()
+        newPlatoReference.setValue(plato).addOnCompleteListener { task ->
             if (task.isSuccessful) {
+                // Aquí obtenemos el UID del nuevo plato
+                val platoUid = newPlatoReference.key
+                uploadProfileImageToStorage(userId, platoUid!!)
                 Toast.makeText(this, "Plato agregado con éxito", Toast.LENGTH_SHORT).show()
                 finish()
             } else {
@@ -125,7 +127,6 @@ class anadirProducto : AppCompatActivity() {
             }
         }
     }
-
 
     private fun createImageUri(): Uri {
         val image = File(filesDir, "camera_photos.png")
@@ -201,8 +202,9 @@ class anadirProducto : AppCompatActivity() {
             ex.printStackTrace()
         }
     }
-    private fun uploadProfileImageToStorage(userId: String) {
-        val storageReference = storage.reference.child("platos_images").child(userId)
+
+    private fun uploadProfileImageToStorage(userId: String, platoUid: String) {
+        val storageReference = storage.reference.child("platos_images").child(platoUid)
         val imageBitmap = (ivProfileImage.drawable as BitmapDrawable).bitmap
 
         val baos = ByteArrayOutputStream()
@@ -219,10 +221,6 @@ class anadirProducto : AppCompatActivity() {
                 // Manejar el error en caso de falla
             }
     }
-
-
-
-
 
 
     companion object {

@@ -1,4 +1,4 @@
-package com.compumovil.feed2budget
+package com.compumovil.feed2budget.Cliente
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,18 +7,17 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.compumovil.feed2budget.Item
+import com.compumovil.feed2budget.ItemAdapter
+import com.compumovil.feed2budget.R
+import com.compumovil.feed2budget.platosRestaurantes
 
 class Restaurantes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_restaurantes)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
+        setContentView(R.layout.activity_restaurantes)
+/*
         val items = listOf(
             Item(R.drawable.cardenales, "Cardenales", "09:00 AM - 09:00 PM"),
             Item(R.drawable.chula, "La chula", "06:00 PM - 04:00 AM"),
@@ -36,5 +35,9 @@ class Restaurantes : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+ */
     }
+
+
 }

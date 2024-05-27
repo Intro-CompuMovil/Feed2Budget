@@ -28,13 +28,16 @@
         android:theme="@style/Theme.Feed2Budget"
         tools:targetApi="31">
         <activity
+            android:name=".Restaurante.EditarProducto"
+            android:exported="false" />
+        <activity
             android:name=".Restaurante.EmpresaRegister"
             android:exported="false" />
         <activity
             android:name=".Cliente.UserRegister"
             android:exported="false" />
         <activity
-            android:name=".anadirProducto"
+            android:name=".Restaurante.anadirProducto"
             android:exported="false" />
         <activity
             android:name=".Restaurante.CompanyInfo"
@@ -50,7 +53,7 @@
             android:name=".semanalDescripcion"
             android:exported="false" />
         <activity
-            android:name=".Restaurantes"
+            android:name=".Cliente.Restaurantes"
             android:exported="false" />
         <activity
             android:name=".Cliente.Presupuesto"
