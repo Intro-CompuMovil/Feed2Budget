@@ -53,8 +53,9 @@ class PlatosRestauranteCliente : AppCompatActivity() {
 
                             listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
                                 val selectedItem = adapter.getItem(position)
-                                val intent = Intent(this@PlatosRestauranteCliente, EditarProducto::class.java)
+                                val intent = Intent(this@PlatosRestauranteCliente, DetallePlato::class.java)
                                 if (selectedItem != null) {
+                                    intent.putExtra("restaurantId", restaurantId)
                                     intent.putExtra("platoUid", selectedItem.uid)
                                 }
                                 startActivity(intent)

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".semanalDescripcion"
+    android:background="@drawable/gradient">
+
+
+    <Button
+        android:id="@+id/desayuno"
+        android:layout_width="357dp"
+        android:layout_height="541dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/navbar"
+        android:text=""
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="256dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="@+id/desayuno"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/desayuno"
+        app:layout_constraintTop_toTopOf="@+id/desayuno"
+        app:srcCompat="@drawable/desayuno" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="334dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="2"
+        android:text="Nombre del Plato"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/descripcionTitle"
+        android:layout_width="221dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Descripción"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/desayuno"
+        app:layout_constraintStart_toStartOf="@+id/desayuno"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/precio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="precio: 8000 COP"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/desayuno"
+        app:layout_constraintStart_toStartOf="@+id/desayuno"
+        app:layout_constraintTop_toBottomOf="@+id/descripcion" />
+
+    <TextView
+        android:id="@+id/descripcion"
+        android:layout_width="222dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="- Bowl de avena \n- Kiwi \n- Jugo de naranja "
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/desayuno"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/desayuno"
+        app:layout_constraintTop_toBottomOf="@+id/descripcionTitle" />
+
+
+    <Button
+        android:id="@+id/btnMapa"
+        android:layout_width="300dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/button_login"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Ver en Mapa"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desayuno" />
+    " />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
