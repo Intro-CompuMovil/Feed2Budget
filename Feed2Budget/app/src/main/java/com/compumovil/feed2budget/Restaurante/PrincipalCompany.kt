@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.compumovil.feed2budget.R
 import com.compumovil.feed2budget.platosRestaurantes
+import com.google.firebase.auth.FirebaseAuth
 
 class PrincipalCompany : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,10 +26,11 @@ class PrincipalCompany : AppCompatActivity() {
         val semanal = findViewById<Button>(R.id.semanal)
         val info = findViewById<ImageButton>(R.id.usuario)
         val anadir = findViewById<Button>(R.id.anadir)
+        val restaurantId = FirebaseAuth.getInstance().currentUser?.uid
 
         semanal.setOnClickListener {
             val intent = Intent(this, platosRestaurantes::class.java)
-            intent.putExtra("id", 0)
+            intent.putExtra("restaurantId", restaurantId)
             startActivity(intent)
         }
 

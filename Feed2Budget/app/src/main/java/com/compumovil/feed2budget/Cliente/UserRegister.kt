@@ -191,7 +191,7 @@ class UserRegister : AppCompatActivity() {
         val user1 = com.compumovil.feed2budget.User.User()
         user1.firstName = firstName
         user1.presupuestoSemanal = presupuesto
-        user1.Empresa = false
+        user1.empresa = false
         user1.direccion = ""
         myRef = database.getReference(PATH_USERS + userId)
 

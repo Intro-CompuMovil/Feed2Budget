@@ -26,6 +26,14 @@ class ItemAdapter(context: Context, private val items: List<Item>) :
         timeTextView.text = item.time
         precioTextView.text = '$' + item.precio.toString()
 
+        if (item.precio == 0.0) {
+            precioTextView.visibility = View.GONE
+        } else {
+            precioTextView.visibility = View.VISIBLE
+        }
+
+
+
         return itemView
     }
 }
