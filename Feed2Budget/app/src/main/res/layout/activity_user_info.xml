@@ -5,13 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserInfo"
+    tools:context=".Cliente.UserInfo"
     android:background="@drawable/gradient">
 
     <Button
         android:id="@+id/saveChanges"
-        android:layout_width="300dp"
-        android:layout_height="68dp"
+        android:layout_width="229dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/button_login"
         android:fontFamily="@font/open_sans_extrabold"
         android:text="@string/guardar_cambios"
@@ -19,10 +20,25 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.912"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.038" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="144dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#F19595"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Logout"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/saveChanges"
+        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <TextView
         android:id="@+id/title"
@@ -60,62 +76,57 @@
         app:layout_constraintVertical_bias="0.273"
         app:srcCompat="@drawable/userimage" />
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="330dp"
-        android:layout_height="68dp"
-        android:drawableStart="@drawable/user"
-        android:drawablePadding="20dp"
-        android:ems="10"
-        android:fontFamily="@font/open_sans_semibold"
-        android:hint="@string/usuario"
-        android:inputType="text"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="331dp"
+        android:layout_height="272dp"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.524" />
+        app:layout_constraintTop_toBottomOf="@+id/userImage">
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="330dp"
-        android:layout_height="68dp"
-        android:drawableStart="@drawable/password"
-        android:drawablePadding="20dp"
-        android:ems="10"
-        android:fontFamily="@font/open_sans_semibold"
-        android:hint="@string/contrase_a"
-        android:inputType="text"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77"
-        tools:ignore="TextFields" />
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="330dp"
+            android:layout_height="68dp"
+            android:drawableStart="@drawable/user"
+            android:drawablePadding="20dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans_semibold"
+            android:hint="@string/usuario"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="330dp"
-        android:layout_height="68dp"
-        android:drawableStart="@drawable/email"
-        android:drawablePadding="20dp"
-        android:ems="10"
-        android:fontFamily="@font/open_sans_semibold"
-        android:hint="@string/correo"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.638" />
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="330dp"
+            android:layout_height="68dp"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="20dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans_semibold"
+            android:hint="@string/correo"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="330dp"
+            android:layout_height="68dp"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="20dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans_semibold"
+            android:hint="@string/contrase_a"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:ignore="TextFields" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

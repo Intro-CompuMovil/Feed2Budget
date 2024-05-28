@@ -10,8 +10,9 @@
 
     <Button
         android:id="@+id/saveChanges"
-        android:layout_width="300dp"
-        android:layout_height="68dp"
+        android:layout_width="229dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/button_login"
         android:fontFamily="@font/open_sans_extrabold"
         android:text="@string/guardar_cambios"
@@ -19,10 +20,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.912"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.038" />
 
     <TextView
         android:id="@+id/title"
@@ -60,82 +61,86 @@
         app:layout_constraintVertical_bias="0.225"
         app:srcCompat="@drawable/userimage" />
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="330dp"
-        android:layout_height="68dp"
-        android:drawableStart="@drawable/user"
-        android:drawablePadding="20dp"
-        android:ems="10"
-        android:fontFamily="@font/open_sans_semibold"
-        android:hint="@string/usuario"
-        android:inputType="text"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="331dp"
+        android:layout_height="315dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.458" />
+        app:layout_constraintTop_toBottomOf="@+id/userImage">
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="330dp"
-        android:layout_height="68dp"
-        android:drawableStart="@drawable/password"
-        android:drawablePadding="20dp"
-        android:ems="10"
-        android:fontFamily="@font/open_sans_semibold"
-        android:hint="@string/contrase_a"
-        android:inputType="text"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.708"
-        tools:ignore="TextFields" />
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="330dp"
+            android:layout_height="68dp"
+            android:drawableStart="@drawable/user"
+            android:drawablePadding="20dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans_semibold"
+            android:hint="@string/usuario"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/direccion"
-        android:layout_width="330dp"
-        android:layout_height="68dp"
-        android:drawableStart="@drawable/location"
-        android:drawablePadding="20dp"
-        android:ems="10"
-        android:fontFamily="@font/open_sans_semibold"
-        android:hint="Direccion"
-        android:inputType="text"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.825"
-        tools:ignore="TextFields" />
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="330dp"
+            android:layout_height="68dp"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="20dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans_semibold"
+            android:hint="@string/contrase_a"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:ignore="TextFields" />
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="330dp"
-        android:layout_height="68dp"
-        android:drawableStart="@drawable/email"
-        android:drawablePadding="20dp"
-        android:ems="10"
-        android:fontFamily="@font/open_sans_semibold"
-        android:hint="@string/correo"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/white"
+        <EditText
+            android:id="@+id/direccion"
+            android:layout_width="330dp"
+            android:layout_height="68dp"
+            android:drawableStart="@drawable/location"
+            android:drawablePadding="20dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans_semibold"
+            android:hint="Direccion"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:ignore="TextFields" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="330dp"
+            android:layout_height="68dp"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="20dp"
+            android:ems="10"
+            android:fontFamily="@font/open_sans_semibold"
+            android:hint="@string/correo"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="144dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#F19595"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:text="Logout"
+        android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintEnd_toStartOf="@+id/saveChanges"
+        app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.compumovil.feed2budget.Restaurante
+package com.compumovil.feed2budget.Cliente
 
 import android.Manifest
 import android.app.Activity
@@ -45,11 +45,10 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 
 
-class CompanyInfo : AppCompatActivity() {
+class UserInfo : AppCompatActivity() {
     private lateinit var etUsername: EditText
     private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
-    private lateinit var etDireccion: EditText
     private lateinit var btnSaveChanges: Button
     private lateinit var userImage: ImageButton
     private val REQUEST_IMAGE_CAPTURE = 1
@@ -59,14 +58,13 @@ class CompanyInfo : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_company_info)
+        setContentView(R.layout.activity_user_info)
         val firebaseAppCheck = FirebaseAppCheck.getInstance()
         firebaseAppCheck.installAppCheckProviderFactory(SafetyNetAppCheckProviderFactory.getInstance())
 
         etUsername = findViewById(R.id.username)
         etEmail = findViewById(R.id.email)
         etPassword = findViewById(R.id.password)
-        etDireccion = findViewById(R.id.direccion)
         btnSaveChanges = findViewById(R.id.saveChanges)
         userImage = findViewById(R.id.userImage)
         auth = Firebase.auth
@@ -84,7 +82,7 @@ class CompanyInfo : AppCompatActivity() {
             val storageReference =
                 FirebaseStorage.getInstance().getReference("profile_images").child(userId)
             storageReference.downloadUrl.addOnSuccessListener { uri ->
-                Glide.with(this@CompanyInfo).load(uri).into(userImage)
+                Glide.with(this@UserInfo).load(uri).into(userImage)
             }
         }
         databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -92,7 +90,6 @@ class CompanyInfo : AppCompatActivity() {
                 val user = dataSnapshot.getValue(User::class.java)
                 if (user != null) {
                     etUsername.setText(user.firstName) // Aquí se obtiene el nombre de usuario
-                    etDireccion.setText(user.direccion) // Aquí se obtiene la dirección
                     // ...
                 }
             }
@@ -120,7 +117,6 @@ class CompanyInfo : AppCompatActivity() {
             val user = FirebaseAuth.getInstance().currentUser
             val newPassword = etPassword.text.toString()
             val newUsername = etUsername.text.toString()
-            val newDireccion = etDireccion.text.toString()
 
             // Actualizar contraseña
             user!!.updatePassword(newPassword).addOnCompleteListener { task ->
@@ -131,14 +127,14 @@ class CompanyInfo : AppCompatActivity() {
                 }
             }
 
-            // Actualizar nombre de usuario y dirección
+            // Actualizar nombre de usuario
             val databaseReference = FirebaseDatabase.getInstance().getReference("users").child(user!!.uid)
-            val updatedUser = mapOf("firstName" to newUsername, "direccion" to newDireccion)
+            val updatedUser = mapOf("firstName" to newUsername)
             databaseReference.updateChildren(updatedUser).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "Información actualizada", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Nombre de usuario actualizado", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, "Error al actualizar la información", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Error al actualizar el nombre de usuario", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -147,6 +143,8 @@ class CompanyInfo : AppCompatActivity() {
         }
 
     }
+
+
     private fun askCameraPermission() {
         when {
             ContextCompat.checkSelfPermission(
@@ -234,8 +232,5 @@ class CompanyInfo : AppCompatActivity() {
         val MY_PERMISSION_REQUEST_CAMERA = 103
     }
 
-
-
-    // Aquí va el resto del código de la clase CompanyInfo, como los métodos para manejar los permisos de la cámara, abrir la cámara, etc.
 
 }
