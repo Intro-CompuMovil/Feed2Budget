@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.googleGmsGoogleServices)
+    kotlin("plugin.serialization") version "1.5.20"
 }
 
 android {
@@ -66,4 +67,18 @@ dependencies {
 
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
+    implementation("io.ktor:ktor-client-core:1.6.0")
+    implementation("io.ktor:ktor-client-cio:1.6.0")
+    implementation("io.ktor:ktor-client-json:1.6.0")
+    implementation("io.ktor:ktor-client-serialization:1.6.0")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+    implementation("com.google.code.gson:gson:2.8.8")
+
 }

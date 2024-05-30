@@ -1,6 +1,7 @@
 package com.compumovil.feed2budget.Cliente
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.hardware.Sensor
@@ -8,10 +9,7 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.location.Geocoder
-import android.os.Bundle
 import android.preference.PreferenceManager
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import org.osmdroid.config.Configuration.*
 import org.osmdroid.util.GeoPoint
@@ -24,7 +22,10 @@ import android.os.Handler
 import android.os.StrictMode
 import android.util.Log
 import android.view.inputmethod.EditorInfo
+import com.compumovil.feed2budget.Item
+import com.compumovil.feed2budget.ItemAdapter
 import com.compumovil.feed2budget.R
+import com.compumovil.feed2budget.User.User
 import com.compumovil.feed2budget.databinding.ActivityMapsBinding
 import org.json.JSONArray
 import org.json.JSONObject
@@ -45,6 +46,30 @@ import org.osmdroid.views.overlay.MapEventsOverlay
 import org.osmdroid.views.overlay.Polyline
 import org.osmdroid.views.overlay.TilesOverlay
 
+import io.ktor.client.*
+import io.ktor.client.engine.cio.*
+import io.ktor.client.features.json.*
+import io.ktor.client.features.json.serializer.*
+import io.ktor.client.request.*
+import kotlinx.coroutines.runBlocking
+
+import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
+
+import kotlinx.coroutines.*
+import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.*
+import okhttp3.OkHttpClient
+import okhttp3.Request
+
+import android.content.Context
+import android.location.Address
+
+
 class MapsActivity : AppCompatActivity(), SensorEventListener {
     private val REQUEST_PERMISSIONS_REQUEST_CODE = 1
     private lateinit var map: MapView
@@ -58,10 +83,15 @@ class MapsActivity : AppCompatActivity(), SensorEventListener {
     private lateinit var binding: ActivityMapsBinding
     private var mGeocoder: Geocoder? = null
 
+    private lateinit var databaseReference: DatabaseReference
+    private var items = mutableListOf<Item>()
+
 
     //Rutas
     private var roadOverlay: Polyline? = null
     lateinit var roadManager: RoadManager
+
+    private val client = OkHttpClient()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,10 +101,12 @@ class MapsActivity : AppCompatActivity(), SensorEventListener {
         mSensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)!!
 
+
         // Pedir permiso
         askPermiso()
 
         getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this))
+        val listaPuntos = mutableListOf<GeoPoint>()
 
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -95,12 +127,46 @@ class MapsActivity : AppCompatActivity(), SensorEventListener {
         centerOnUserLocation()
         locationOverlay.enableFollowLocation()
 
+        var latitude = 0.0
+        var longitude = 0.0
+        listaPuntos.clear()
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("users")
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                items.clear()
+                for (userSnapshot in dataSnapshot.children) {
+                    val user = userSnapshot.getValue(User::class.java)
+                    if (user != null && user.empresa) {
+                        val userId = userSnapshot.key
+                        Toast.makeText(this@MapsActivity, user.direccion, Toast.LENGTH_SHORT).show()
+                        val latLng = getLatLngFromAddress(this@MapsActivity, user.direccion)
+
+                        if (latLng != null) {
+                            latitude = latLng.first
+                            longitude = latLng.second
+                            listaPuntos.add(GeoPoint(latitude, longitude))
+                            Toast.makeText(this@MapsActivity, "${latitude} ${longitude}", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this@MapsActivity, "Unable to get Latitude and Longitude for the given address.", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        Log.d("Restaurantes", "User is not a company: ${user?.firstName}")
+                    }
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.e("Restaurantes", "Failed to read users", databaseError.toException())
+            }
+        })
+
         val parrillada = GeoPoint(4.628596, -74.066345)
         val giornatta = GeoPoint(4.697936, -74.054965)
         val chula = GeoPoint(4.699182, -74.050430)
-        addMarkerWithAddress(parrillada)
-        addMarkerWithAddress(giornatta)
-        addMarkerWithAddress(chula)
+        for (geoPoint in listaPuntos) {
+            addMarkerWithAddress(geoPoint)
+        }
 
         //buscar y longclick
         buscar()
@@ -305,7 +371,7 @@ class MapsActivity : AppCompatActivity(), SensorEventListener {
                 map.controller.setZoom(18)
                 map.controller.setCenter(lastLocation)
             } else {
-                Toast.makeText(this, "Buscando ubicación...", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MapsActivity, "Buscando ubicación...", Toast.LENGTH_SHORT).show()
             }
         }, 1000)
     }
@@ -367,5 +433,64 @@ class MapsActivity : AppCompatActivity(), SensorEventListener {
 
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        client.dispatcher.executorService.shutdown()
+    }
+    private fun getCoordinatesFromAddress(address: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val url = "https://nominatim.openstreetmap.org/search?q=${address.replace(" ", "%20")}&format=json&addressdetails=1&limit=1"
+                val request = Request.Builder().url(url).build()
+                val response = client.newCall(request).execute()
+
+                if (response.isSuccessful) {
+                    val responseBody = response.body?.string()
+                    if (!responseBody.isNullOrEmpty()) {
+                        val gson = Gson()
+                        val type = object : TypeToken<List<NominatimResponseItem>>() {}.type
+                        val result: List<NominatimResponseItem> = gson.fromJson(responseBody, type)
+                        val coordinates = result.firstOrNull()
+
+                        withContext(Dispatchers.Main) {
+                            coordinates?.let {
+                                Toast.makeText(this@MapsActivity, "Latitude: ${it.lat}, Longitude: ${it.lon}", Toast.LENGTH_LONG).show()
+                            } ?: run {
+                                Toast.makeText(this@MapsActivity, "No coordinates found for the address.", Toast.LENGTH_LONG).show()
+                            }
+                        }
+                    } else {
+                        showToastOnMainThread("Empty response body.")
+                    }
+                } else {
+                    showToastOnMainThread("Request failed: ${response.message}")
+                }
+            } catch (e: Exception) {
+                showToastOnMainThread("Failed to get coordinates: ${e.message}")
+            }
+        }
+    }
+    private suspend fun showToastOnMainThread(message: String) {
+        withContext(Dispatchers.Main) {
+            Toast.makeText(this@MapsActivity, message, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    fun getLatLngFromAddress(context: Context, address: String): Pair<Double, Double>? {
+        val geocoder = Geocoder(context, Locale.getDefault())
+        val addresses: List<Address>?
+
+        try {
+            addresses = geocoder.getFromLocationName(address, 1)
+            if (addresses!!.isNotEmpty()) {
+                val location = addresses[0]
+                return Pair(location.latitude, location.longitude)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return null
     }
 }
